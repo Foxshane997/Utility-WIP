@@ -1,0 +1,100 @@
+.timer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #e0e5ec; /* Match the navbar background */
+    border-radius: 20px;
+    padding: 20px;
+  }
+  
+  .select-wrapper {
+    margin: 20px 0;
+    background: #e0e5ec; /* Match the navbar background */
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px #bebebe, -4px -4px 10px #ffffff; /* Match the shadows used elsewhere */
+    padding: 10px;
+    display: inline-block;
+  }
+  
+  .circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: #e0e5ec; /* Match the navbar background */
+    border-radius: 50%;
+    box-shadow: inset 8px 8px 15px #bebebe, inset -8px -8px 15px #ffffff;
+  }
+  
+  svg {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+  }
+  
+  .background-circle {
+    fill: none;
+    stroke: #d6d6d6; /* Light gray for the background circle */
+    stroke-width: 20;
+  }
+  
+  .progress-circle {
+    fill: none;
+    stroke: #4db8ff; /* Blue for the progress circle */
+    stroke-width: 20;
+    transition: stroke-dashoffset 1s linear;
+    stroke-dasharray: 565.48; 
+  }
+  
+  .time-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #4db8ff; /* Blue text color */
+    text-shadow: 1px 1px 2px #ffffff, -1px -1px 2px #bebebe; /* Soft shadow for better readability */
+  }
+  
+  .controls {
+    margin-top: 20px;
+    background: #e0e5ec; /* Match the navbar background */
+    border-radius: 10px;
+    padding: 10px;
+    display: inline-block;
+  }
+  
+  button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background: #e0e5ec; /* Match the navbar background */
+    box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff; /* Match the shadows used elsewhere */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: transparent; /* Keep hover effect consistent */
+  }
+  
+  button.start:hover {
+    background-color: #4caf50; /* Green for start button */
+    box-shadow: 2px 2px 5px #4caf50, -2px -2px 5px #ffffff;
+    color: white;
+  }
+  
+  button.stop:hover {
+    background-color: #f44336; /* Red for stop button */
+    box-shadow: 2px 2px 5px #f44336, -2px -2px 5px #ffffff;
+    color: white;
+  }
+  
+  button.reset:hover {
+    background-color: #ff9800; /* Orange for reset button */
+    box-shadow: 2px 2px 5px #ff9800, -2px -2px 5px #ffffff;
+    color: white;
+  }
+  

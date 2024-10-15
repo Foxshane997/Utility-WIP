@@ -1,10 +1,10 @@
 .to-do-list {
   text-align: center;
   max-width: 600px;
-  margin: 40px auto; /* Center horizontally and add margin */
+  margin: 40px auto;
   padding: 20px;
-  background-color: #e0e5ec; /* Match the navbar background */
-  border-radius: 20px; /* Match the border-radius of the counter */
+  background-color: #e0e5ec;
+  border-radius: 20px;
   max-height: 80vh;
   overflow-y: auto;
   padding-bottom: 100px;
@@ -13,7 +13,7 @@
 .to-do-list h1 {
   margin-bottom: 20px;
   color: #333;
-  font-size: 28px; /* Adjust font size for consistency */
+  font-size: 28px;
 }
 
 .to-do-list div {
@@ -24,10 +24,10 @@
   margin-right: 10px;
   padding: 10px;
   border: none;
-  border-radius: 10px; /* Match button border-radius */
+  border-radius: 10px;
   font-weight: 500;
   font-size: medium;
-  background-color: #e0e5ec; /* Match the navbar background */
+  background-color: #e0e5ec;
   color: #333;
   box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
 }
@@ -36,15 +36,17 @@
   padding: 10px 20px;
   cursor: pointer;
   border: none;
-  border-radius: 10px; /* Match button border-radius */
-  background-color: #e0e5ec; /* Match the navbar background */
+  border-radius: 10px;
+  background-color: #e0e5ec;
   color: #333;
   box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
 .add-button:hover {
-  background-color: lightskyblue; /* Match navbar hover color */
-  box-shadow: inset 8px 8px 16px #bebebe, inset -8px -8px 16px #ffffff; /* Add hover shadow effect */
+  background-color: #4caf50;
+  box-shadow: 2px 2px 5px #4caf50, -2px -2px 5px #ffffff;
+  color: white;
 }
 
 .to-do-list ol {
@@ -59,8 +61,8 @@
   align-items: center;
   margin-bottom: 10px;
   padding: 10px;
-  background-color: #e0e5ec; /* Match the navbar background */
-  border-radius: 10px; /* Match button border-radius */
+  background-color: #e0e5ec;
+  border-radius: 10px;
   box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
 }
 
@@ -75,16 +77,17 @@
   margin-left: 5px;
   padding: 10px 20px;
   border: none;
-  border-radius: 10px; /* Match button border-radius */
-  background-color: #e0e5ec; /* Match the navbar background */
+  border-radius: 10px;
+  background-color: #e0e5ec;
   color: #333;
   box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
 .delete-button:hover {
-  background-color: #f1a1a1; /* Change to red on hover */
+  background-color: #f44336;
+  box-shadow: 2px 2px 5px #f44336, -2px -2px 5px #ffffff;
   color: white;
-  box-shadow: inset 8px 8px 16px #bebebe, inset -8px -8px 16px #ffffff; /* Add hover shadow effect */
 }
 
 @media only screen and (max-width: 375px) {

@@ -1,7 +1,7 @@
 .counter-container {
     font-size: 24px;
     padding: 20px;
-    background: #e0e5ec;
+    background: #e0e5ec; /* Base background */
     max-width: 600px;
     margin: 40px auto 0;
     display: flex;
@@ -25,19 +25,21 @@
     margin: 5px;
     border-radius: 10px;
     border: none;
-    background: #e0e5ec;
+    background: #e0e5ec; /* Base background */
     box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
-    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
 .button-increment:hover {
-    box-shadow: inset 8px 8px 16px #bebebe, inset -8px -8px 16px #ffffff;
-    background-color: lightskyblue;
+    background-color: #4caf50; /* Green for hover */
+    box-shadow: 2px 2px 5px #4caf50, -2px -2px 5px #ffffff; /* Shadow effect */
+    color: white; /* Text color change */
 }
 
 .button-decrement:hover {
-    box-shadow: inset 8px 8px 16px #bebebe, inset -8px -8px 16px #ffffff;
-    background-color: #E57373;
+    background-color: #f44336; /* Red for hover */
+    box-shadow: 2px 2px 5px #f44336, -2px -2px 5px #ffffff; /* Shadow effect */
+    color: white; /* Text color change */
 }
 
 footer {
@@ -61,7 +63,7 @@ footer a {
 }
 
 footer a:hover {
-    color: lightskyblue;
+    color: lightskyblue; /* Maintain hover color consistency */
     font-size: x-large;
 }
 

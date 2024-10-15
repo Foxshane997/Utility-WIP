@@ -3,40 +3,26 @@ nav {
   padding: 15px 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; /* Center items in the nav */
   position: relative;
-  /* border-bottom: 1px solid black; */
 }
 
-ul {
+.nav-links {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  display: flex; /* Keep this as is */
+  flex-direction: row; /* Keep this as is for all screen sizes */
+  justify-content: space-around; /* Keep this as is */
   flex: 1;
 }
 
-@media (max-width: 768px) {
-  ul {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  nav {
-    justify-content: center;
-  }
-}
-
-ul li {
+.nav-links li {
   text-align: center;
   margin: 0;
 }
 
-ul li a {
+.nav-links li a {
   display: block;
   color: #333;
   padding: 12px 20px;
@@ -47,20 +33,21 @@ ul li a {
   border-radius: 10px;
 }
 
-ul li a:hover {
+.nav-links li a:hover {
   background-color: lightskyblue;
   color: #333;
   border-radius: 10px;
 }
 
+/* Mobile styles */
 @media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: stretch;
+  .nav-links {
+      justify-content: space-around; /* Keep items side by side */
+      width: 100%; /* Full width for mobile */
   }
 
-  nav ul li a {
-    padding: 10px;
-    font-size: 1rem;
+  .nav-links li a {
+      padding: 10px; /* Adjust padding for mobile */
+      font-size: 1rem; /* Adjust font size for mobile */
   }
 }
