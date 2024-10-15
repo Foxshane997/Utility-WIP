@@ -1,0 +1,94 @@
+.to-do-list {
+  text-align: center;
+  max-width: 600px;
+  margin: 40px auto; /* Center horizontally and add margin */
+  padding: 20px;
+  background-color: #e0e5ec; /* Match the navbar background */
+  border-radius: 20px; /* Match the border-radius of the counter */
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-bottom: 100px;
+}
+
+.to-do-list h1 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 28px; /* Adjust font size for consistency */
+}
+
+.to-do-list div {
+  margin-bottom: 20px;
+}
+
+.to-do-list input {
+  margin-right: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px; /* Match button border-radius */
+  font-weight: 500;
+  font-size: medium;
+  background-color: #e0e5ec; /* Match the navbar background */
+  color: #333;
+  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+}
+
+.to-do-list .add-button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px; /* Match button border-radius */
+  background-color: #e0e5ec; /* Match the navbar background */
+  color: #333;
+  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+}
+
+.add-button:hover {
+  background-color: lightskyblue; /* Match navbar hover color */
+  box-shadow: inset 8px 8px 16px #bebebe, inset -8px -8px 16px #ffffff; /* Add hover shadow effect */
+}
+
+.to-do-list ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.to-do-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #e0e5ec; /* Match the navbar background */
+  border-radius: 10px; /* Match button border-radius */
+  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+}
+
+.to-do-list .text {
+  flex: 1;
+  text-align: left;
+  margin-right: 10px;
+}
+
+.to-do-list .delete-button,
+.to-do-list .move-button {
+  margin-left: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px; /* Match button border-radius */
+  background-color: #e0e5ec; /* Match the navbar background */
+  color: #333;
+  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+}
+
+.delete-button:hover {
+  background-color: #f1a1a1; /* Change to red on hover */
+  color: white;
+  box-shadow: inset 8px 8px 16px #bebebe, inset -8px -8px 16px #ffffff; /* Add hover shadow effect */
+}
+
+@media only screen and (max-width: 375px) {
+  .to-do-list {
+      padding: 10px;
+  }
+}
