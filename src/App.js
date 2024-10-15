@@ -3,7 +3,8 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Counter from './components/Counter';
-import ToDo from './components/ToDo'; 
+import ToDo from './components/ToDo';
+import Footer from './components/Footer';
 
 const App = () => {
     return (
@@ -14,6 +15,7 @@ const App = () => {
                 <Route path="/counter" element={<Counter />} />
                 <Route path="/todo" element={<ToDo />} />
             </Routes>
+            <Footer />
         </Router>
     );
 };
