@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import '../assets/styles/Calculator.css';
+import { create, all } from "mathjs";
+import "../assets/styles/Calculator.css";
+
+const math = create(all);
 
 const Calculator = () => {
   const [input, setInput] = useState("");
@@ -16,14 +19,19 @@ const Calculator = () => {
 
   const handleEqual = () => {
     try {
-      setResults(eval(input));
+      const sanitizedInput = input.replace(/\s+/g, "");
+      const evaluatedResult = math.evaluate(sanitizedInput);
+
+      setResults(evaluatedResult);
     } catch (error) {
+      console.error("Error during evaluation:", error);
       setResults("error");
     }
   };
 
   return (
     <div className="calculator-container">
+      <h1>Calculator</h1>
       <div className="display">
         <input type="text" value={input} readOnly />
         <div className="result">{result}</div>
@@ -34,17 +42,33 @@ const Calculator = () => {
             {num}
           </button>
         ))}
-        {["+", "-", "*", "/"].map((op) => (
-          <button key={op} onClick={() => handleClick(op)} id={op}>
-            {op}
-          </button>
-        ))}
-        <button onClick={handleClear} id="clear">C</button>
-        <button onClick={handleEqual} id="equal">=</button>
+        <button className="operator-button" onClick={() => handleClick("+")}>
+          +
+        </button>
+        <button className="operator-button" onClick={() => handleClick("-")}>
+          -
+        </button>
+        <button
+          className="operator-button-regular"
+          onClick={() => handleClick("*")}
+        >
+          *
+        </button>
+        <button
+          className="operator-button-regular"
+          onClick={() => handleClick("/")}
+        >
+          /
+        </button>
+        <button onClick={handleClear} id="clear">
+          C
+        </button>
+        <button onClick={handleEqual} id="equal">
+          =
+        </button>
       </div>
     </div>
   );
 };
 
 export default Calculator;
- 
