@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { create, all } from "mathjs";
 import "../assets/styles/Calculator.css";
 
@@ -8,8 +8,24 @@ const Calculator = () => {
   const [input, setInput] = useState("");
   const [result, setResults] = useState("");
 
+  useEffect(() => {
+    const storedInput = localStorage.getItem("calculatorInput");
+    const storedResult = localStorage.getItem("calculatorResult");
+
+    if (storedInput) {
+      setInput(storedInput);
+    }
+    if (storedResult) {
+      setResults(storedResult);
+    }
+  }, []);
+  useEffect(() => {
+    localStorage.setItem("calculatorInput", input);
+    localStorage.setItem("calculatorResult", result);
+  }, [input, result]);
+
   const handleClick = (value) => {
-    setInput(input + value);
+    setInput((prevInput) => prevInput + value);
   };
 
   const handleClear = () => {
@@ -21,7 +37,6 @@ const Calculator = () => {
     try {
       const sanitizedInput = input.replace(/\s+/g, "");
       const evaluatedResult = math.evaluate(sanitizedInput);
-
       setResults(evaluatedResult);
     } catch (error) {
       console.error("Error during evaluation:", error);
