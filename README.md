@@ -1,71 +1,84 @@
-# Getting Started with Create React App
+# SF Util Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains a collection of React applications that demonstrate various functionalities, including a Counter, Pomodoro Timer, Calculator using Math.js, and a To-Do list with local storage.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Counter](#counter)
+- [Pomodoro Timer](#pomodoro-timer)
+- [Calculator](#calculator)
+- [To-Do List](#to-do-list)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Counter
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The Counter app allows users to increment and decrement a counter value. It provides a simple interface to showcase state management in React.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Features
+- Increment and Decrement buttons
+- Reset functionality
 
-### `npm test`
+### How to Use
+1. Clone the repository.
+2. Navigate to the `counter` directory.
+3. Run `npm start` to start the application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Pomodoro Timer
 
-### `npm run build`
+The Pomodoro Timer app helps users manage their time using the Pomodoro Technique. It provides a timer for work sessions and breaks.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Features
+- Adjustable work and break durations
+- Notifications when sessions end
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### How to Use
+1. Clone the repository.
+2. Navigate to the `pomodoro-timer` directory.
+3. Run `npm start` to start the application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Calculator
 
-### `npm run eject`
+The Calculator app is built using Math.js for performing calculations. It provides a simple interface for basic arithmetic operations.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Features
+- Addition, subtraction, multiplication, and division
+- Clear button to reset the calculator
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### How to Use
+1. Clone the repository.
+2. Navigate to the `calculator` directory.
+3. Run `npm start` to start the application.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Local Storage
+The Calculator uses local storage to retain the last entered values and operations, allowing users to pick up where they left off.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## To-Do List
 
-## Learn More
+The To-Do List app allows users to create, read, update, and delete tasks. It utilizes local storage to persist tasks across sessions.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Features
+- Add and remove tasks
+- Mark tasks as completed
+- Clear all completed tasks
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### How to Use
+1. Clone the repository.
+2. Navigate to the `todo` directory.
+3. Run `npm start` to start the application.
 
-### Code Splitting
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- React
+- Math.js
+- Local Storage
 
-### Analyzing the Bundle Size
+## Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To get a copy of this repository up and running on your local machine, follow these steps:
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# Utility-WIP
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
