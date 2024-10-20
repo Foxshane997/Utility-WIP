@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import '../assets/styles/ToDo.css';
+import "../assets/styles/ToDo.css";
 
 function ToDo() {
   const [lists, setLists] = useState(
@@ -27,7 +27,7 @@ function ToDo() {
     }
   }
 
-  function handleKeyPress(event) {
+  function handleTaskKeyPress(event) {
     if (event.key === "Enter") {
       addTask();
     }
@@ -35,9 +35,9 @@ function ToDo() {
 
   function deleteTask(taskIndex) {
     const updatedLists = [...lists];
-    updatedLists[selectedListIndex].tasks = updatedLists[selectedListIndex].tasks.filter(
-      (_, i) => i !== taskIndex
-    );
+    updatedLists[selectedListIndex].tasks = updatedLists[
+      selectedListIndex
+    ].tasks.filter((_, i) => i !== taskIndex);
     setLists(updatedLists);
   }
 
@@ -49,9 +49,17 @@ function ToDo() {
     }
   }
 
+  function handleListKeyPress(event) {
+    if (event.key === "Enter") {
+      addNewList();
+    }
+  }
+
   function deleteList() {
     if (lists.length > 1 && lists[selectedListIndex].name !== "To-Do") {
-      const updatedLists = lists.filter((_, index) => index !== selectedListIndex);
+      const updatedLists = lists.filter(
+        (_, index) => index !== selectedListIndex
+      );
       setLists(updatedLists);
       setSelectedListIndex(0);
     }
@@ -60,7 +68,7 @@ function ToDo() {
   return (
     <div className="to-do-list">
       <h1>{lists[selectedListIndex].name}</h1>
-      <div>
+      <div className="list-header">
         <select
           value={selectedListIndex}
           onChange={(e) => setSelectedListIndex(Number(e.target.value))}
@@ -76,6 +84,12 @@ function ToDo() {
             Delete List
           </button>
         )}
+        <button
+          className="add-list-button"
+          onClick={() => setShowListInput(!showListInput)}
+        >
+          +
+        </button>
       </div>
 
       <div>
@@ -84,7 +98,7 @@ function ToDo() {
           placeholder="Enter a Task"
           value={newTask}
           onChange={handleInputChange}
-          onKeyPress={handleKeyPress}
+          onKeyPress={handleTaskKeyPress}
         />
         <button className="add-button" onClick={addTask}>
           Add Task
@@ -102,22 +116,18 @@ function ToDo() {
         ))}
       </ol>
 
-      <div className="create-new-list">
-        <button onClick={() => setShowListInput(!showListInput)}>
-          Create New List
-        </button>
-        {showListInput && (
-          <div>
-            <input
-              type="text"
-              placeholder="Enter list name"
-              value={newListName}
-              onChange={(e) => setNewListName(e.target.value)}
-            />
-            <button onClick={addNewList}>Add List</button>
-          </div>
-        )}
-      </div>
+      {showListInput && (
+        <div className="new-list-input">
+          <input
+            type="text"
+            placeholder="Enter list name"
+            value={newListName}
+            onChange={(e) => setNewListName(e.target.value)}
+            onKeyPress={handleListKeyPress}
+          />
+          <button onClick={addNewList}>Add List</button>
+        </div>
+      )}
     </div>
   );
 }
