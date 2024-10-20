@@ -72,10 +72,9 @@
   margin-right: 10px;
 }
 
-.to-do-list .delete-button,
-.to-do-list .move-button {
+.to-do-list .delete-button {
   margin-left: 5px;
-  padding: 10px 20px;
+  padding: 10px;
   border: none;
   border-radius: 10px;
   background-color: #e0e5ec;
@@ -90,8 +89,52 @@
   color: white;
 }
 
-@media only screen and (max-width: 375px) {
-  .to-do-list {
-      padding: 10px;
-  }
+.list-selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.list-selection select {
+  margin-right: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #e0e5ec;
+  color: #333;
+  font-size: medium;
+  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+}
+
+.delete-list-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-list-button:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.new-list {
+  margin-top: 20px;
+}
+
+.new-list input {
+  margin-right: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #e0e5ec;
+  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+}
+
+.create-new-list {
+  margin-top: 15px;
 }
