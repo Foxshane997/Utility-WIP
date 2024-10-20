@@ -1,4 +1,4 @@
-# SF Util Application
+# SF Utility Application
 
 This repository contains a collection of React applications that demonstrate various functionalities, including a Counter, Pomodoro Timer, Calculator using Math.js, and a To-Do list with local storage.
 
