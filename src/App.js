@@ -13,10 +13,11 @@ const App = () => {
         <Router>
             <NavBar />
             <Routes>
+                <Route path="/" element={<ToDo />} />
                 <Route path="/todo" element={<ToDo />} />
                 <Route path="/counter" element={<Counter />} />
                 <Route path="/timer" element={<Timer />} />
-                <Route path="/Calculator" element={<Calculator />} />
+                <Route path="/calculator" element={<Calculator />} />
             </Routes>
             <Footer />
         </Router>
