@@ -13,14 +13,6 @@ function Counter() {
     changeCounter(counter - 1);
   };
 
-  useEffect(() => {
-    document.title = "Counter App";
-
-    return () => {
-      document.title = "Counter App";
-    };
-  }, []);
-
   return (
     <div className="App">
       <div className="counter-container">
