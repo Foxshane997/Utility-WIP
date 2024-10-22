@@ -50,7 +50,7 @@ The To-Do List app allows users to create, read, update, and delete tasks. It ut
 
 ## Technologies Used
 
-- React
+- React.js
 - React Timer Hook
 - Math.js
 - Local Storage
