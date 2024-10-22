@@ -1,22 +1,33 @@
-import React, { useState, useEffect } from "react";
-import '../assets/styles/Timer.css'
+import React, { useState, useEffect, useRef } from "react";
+import "../assets/styles/Timer.css";
 
 const CountdownTimer = () => {
   const [time, setTime] = useState(2400);
   const [selectedTime, setSelectedTime] = useState(2400);
   const [isRunning, setIsRunning] = useState(false);
+  const startTimeRef = useRef(null);
 
   useEffect(() => {
     let timer;
+
     if (isRunning && time > 0) {
+      startTimeRef.current = Date.now();
       timer = setInterval(() => {
-        setTime((prevTime) => prevTime - 1);
-      }, 1000);
-    } else if (time === 0) {
-      setIsRunning(false);
+        const elapsedTime = Math.floor(
+          (Date.now() - startTimeRef.current) / 1000
+        );
+        const newTime = selectedTime - elapsedTime;
+        setTime(newTime >= 0 ? newTime : 0);
+
+        if (newTime <= 0) {
+          setIsRunning(false);
+          clearInterval(timer);
+        }
+      }, 100);
     }
+
     return () => clearInterval(timer);
-  }, [isRunning, time]);
+  }, [isRunning, selectedTime]);
 
   const handleTimeChange = (e) => {
     const newTime = parseInt(e.target.value) * 60;
@@ -38,6 +49,7 @@ const CountdownTimer = () => {
   const handleReset = () => {
     setTime(selectedTime);
     setIsRunning(false);
+    startTimeRef.current = null;
   };
 
   const formatTime = (timeInSeconds) => {
@@ -46,7 +58,7 @@ const CountdownTimer = () => {
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
 
-  const radius = 90; // Radius of the circle
+  const radius = 90;
   const circumference = 2 * Math.PI * radius;
 
   const calculateStrokeOffset = (elapsedTime) => {
