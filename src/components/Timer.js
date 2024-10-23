@@ -6,13 +6,13 @@ const CountdownTimer = () => {
   const [selectedTime, setSelectedTime] = useState(2400);
   const [isRunning, setIsRunning] = useState(false);
   const startTimeRef = useRef(null);
+  const intervalRef = useRef(null);
 
   useEffect(() => {
-    let timer;
-
-    if (isRunning && time > 0) {
+    if (isRunning) {
       startTimeRef.current = Date.now();
-      timer = setInterval(() => {
+
+      intervalRef.current = setInterval(() => {
         const elapsedTime = Math.floor(
           (Date.now() - startTimeRef.current) / 1000
         );
@@ -21,12 +21,12 @@ const CountdownTimer = () => {
 
         if (newTime <= 0) {
           setIsRunning(false);
-          clearInterval(timer);
+          clearInterval(intervalRef.current);
         }
-      }, 100);
+      }, 1000);
     }
 
-    return () => clearInterval(timer);
+    return () => clearInterval(intervalRef.current);
   }, [isRunning, selectedTime]);
 
   const handleTimeChange = (e) => {
@@ -34,6 +34,7 @@ const CountdownTimer = () => {
     setSelectedTime(newTime);
     setTime(newTime);
     setIsRunning(false);
+    clearInterval(intervalRef.current);
   };
 
   const handleStart = () => {
@@ -44,11 +45,13 @@ const CountdownTimer = () => {
 
   const handleStop = () => {
     setIsRunning(false);
+    clearInterval(intervalRef.current);
   };
 
   const handleReset = () => {
     setTime(selectedTime);
     setIsRunning(false);
+    clearInterval(intervalRef.current);
     startTimeRef.current = null;
   };
 
