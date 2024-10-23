@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://Foxshane997.github.io/Utility",
   "dependencies": {
-    "math.js": "^1.1.46",
+    "mathjs": "^13.2.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
